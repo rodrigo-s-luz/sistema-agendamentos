@@ -53,4 +53,17 @@ para diferentes negócios.
 
 ## Situação do projeto
 
-Em preparação. Nenhuma funcionalidade implementada.
+Backend inicial configurado com Express e uma rota de verificação.
+Os cadastros, a autenticação e a conexão com o banco ainda não foram implementados.
+
+## Como executar o backend
+
+Pré-requisitos: Node.js e npm instalados.
+
+1. Abra o terminal na raiz do projeto.
+2. Entre na pasta do backend: `cd backend`
+3. Instale as dependências: `npm install`
+4. Inicie o servidor: `npm start`
+5. Acesse http://localhost:3000 no navegador.
+
+Para encerrar o servidor, pressione Ctrl + C no terminal.
