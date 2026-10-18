@@ -1,0 +1,142 @@
+/* 
+Unidade     Referência                                           Uso comum
+px          Pixel CSS                                            Bordas finas e detalhes
+----------------------------------------------------------------------------------------------------------
+rem         Tamanho da fonte do elemento raiz (html)             Fontes, espaçamentos e limites de largura
+----------------------------------------------------------------------------------------------------------
+em          Em geral, tamanho da fonte do próprio elemento;      Medidas que devem acompanhar a fonte de 
+            em font-size, o do elemento pai                      um componente
+*/
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+  background-color: #f4f7fa;
+  color: #10213a;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh;
+  padding: 1.5rem 1.5rem 0 1.5rem;
+  gap: 1.5rem;
+  position: relative;
+  isolation: isolate;
+}
+
+.marca {
+  font-size: 3rem;
+  font-weight: bold;
+  color: #0a1b35;
+}
+
+.marca img {
+  width: 16rem;
+  max-width: 100%;
+  height: auto;
+}
+
+.cartao-login {
+  background-color: #ffffff;
+  width: 100%;
+  max-width: 30rem;
+  padding: 2rem;
+  border: 1px solid #dce3ec;
+  border-radius: 0.75rem;
+  box-shadow: 4px 4px 10px rgba(0, 0, 0, 0.08);
+}
+
+.subtitulo {
+  color: #64748b;
+}
+
+.titulo-login,
+.subtitulo,
+.link-cadastro {
+  text-align: center;
+}
+
+.campo {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  margin-bottom: 1.25rem;
+}
+
+.campo input {
+  width: 100%;
+  padding: 0.75rem;
+  border: 1px solid #dce3ec;
+  border-radius: 0.5rem;
+  background-color: #ffffff;
+  color: #10213a;
+  font-size: 1rem;
+}
+
+.campo label {
+  font-weight: bold;
+}
+
+.botao-primario {
+  width: 100%;
+  padding: 0.875rem;
+  background-color: #008f95;
+  color: #ffffff;
+  border: none;
+  border-radius: 0.5rem;
+  font-size: 1rem;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+.botao-primario:hover {
+  background-color: #00777d;
+}
+
+.link-cadastro {
+  margin-top: 1.5rem;
+  border-top: 1px solid #dce3ec;
+  padding-top: 1.5rem;
+}
+.link-cadastro a {
+  color: #00777d;
+  font-weight: bold;
+  text-decoration: none;
+}
+
+.link-cadastro a:hover {
+  text-decoration: underline;
+}
+
+footer {
+  font-size: 0.875rem;
+  color: #64748b;
+  text-align: center;
+  margin-top: 3rem;
+}
+
+body::before,
+body::after {
+  content: "";
+  position: fixed;
+  width: 36rem;
+  height: 26rem;
+  border-radius: 50%;
+  background-color: #e3f3f4;
+  z-index: -1;
+  pointer-events: none;
+}
+
+body::before {
+  top: -13rem;
+  right: -16rem;
+}
+
+body::after {
+  bottom: -13rem;
+  left: -16rem;
+}

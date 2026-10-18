@@ -1,12 +1,18 @@
 const express = require("express");
+const path = require("node:path");
 
 const app = express();
 const port = 3000;
 
-app.get("/", (req, res) => {
-  res.json({
-    mensagem: "API do sistema de agendamentos funcionando!",
-  });
+const servicos = [
+  { id: 1, nome: "Consulta", duracaoMinutos: 30 },
+  { id: 2, nome: "Atendimento Inicial", duracaoMinutos: 60 },
+];
+
+app.use(express.static(path.join(__dirname, "../../frontend")));
+
+app.get("/servicos", (req, res) => {
+  res.json(servicos);
 });
 
 app.listen(port, () => {

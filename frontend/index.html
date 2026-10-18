@@ -1,0 +1,60 @@
+<!doctype html>
+<html lang="pt-br">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Sistema de Agendamentos</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Patrick+Hand&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="css/style.css" />
+  </head>
+  <body>
+    <header class="marca">
+      <img src="./images/logo-hora-certa.png.png" alt="Hora Certa" />
+    </header>
+    <main class="cartao-login">
+      <h1 class="titulo-login">Bem vindo de volta</h1>
+      <p class="subtitulo">Entre na sua conta para continuar.</p>
+
+      <form id="form-login">
+        <div class="campo">
+          <label for="email">E-mail</label>
+          <input
+            type="email"
+            id="email"
+            name="email"
+            placeholder="seuemail@exemplo.com"
+            autocomplete="username"
+            required
+          />
+        </div>
+
+        <div class="campo">
+          <label for="senha">Senha</label>
+          <input
+            type="password"
+            id="senha"
+            name="senha"
+            autocomplete="current-password"
+            required
+          />
+        </div>
+
+        <button class="botao-primario" type="button">Entrar</button>
+      </form>
+
+      <p class="link-cadastro">
+        Não tem uma conta? <a href="cadastro.html">Criar minha conta</a>
+      </p>
+    </main>
+
+    <footer>
+      <p>Sistema de Agendamentos</p>
+      <p>RL Soluções Digitais</p>
+    </footer>
+  </body>
+</html>
