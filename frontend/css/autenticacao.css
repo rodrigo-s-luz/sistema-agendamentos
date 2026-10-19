@@ -8,15 +8,11 @@ em          Em geral, tamanho da fonte do próprio elemento;      Medidas que de
             em font-size, o do elemento pai                      um componente
 */
 
-* {
-  box-sizing: border-box;
-}
-
 body {
   margin: 0;
   font-family: Arial, sans-serif;
-  background-color: #f4f7fa;
-  color: #10213a;
+  background-color: var(--cor-fundo);
+  color: var(--cor-texto);
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -28,33 +24,27 @@ body {
   isolation: isolate;
 }
 
-.marca {
-  font-size: 3rem;
-  font-weight: bold;
-  color: #0a1b35;
-}
-
 .marca img {
   width: 16rem;
   max-width: 100%;
   height: auto;
 }
 
-.cartao-login {
-  background-color: #ffffff;
+.cartao-autenticacao {
+  background-color: var(--cor-superficie);
   width: 100%;
   max-width: 30rem;
   padding: 2rem;
-  border: 1px solid #dce3ec;
+  border: 1px solid var(--cor-borda);
   border-radius: 0.75rem;
   box-shadow: 4px 4px 10px rgba(0, 0, 0, 0.08);
 }
 
 .subtitulo {
-  color: #64748b;
+  color: var(--cor-texto-suave);
 }
 
-.titulo-login,
+.titulo-autenticacao,
 .subtitulo,
 .link-cadastro {
   text-align: center;
@@ -70,10 +60,10 @@ body {
 .campo input {
   width: 100%;
   padding: 0.75rem;
-  border: 1px solid #dce3ec;
+  border: 1px solid var(--cor-borda);
   border-radius: 0.5rem;
-  background-color: #ffffff;
-  color: #10213a;
+  background-color: var(--cor-superficie);
+  color: var(--cor-texto);
   font-size: 1rem;
 }
 
@@ -84,8 +74,8 @@ body {
 .botao-primario {
   width: 100%;
   padding: 0.875rem;
-  background-color: #008f95;
-  color: #ffffff;
+  background-color: var(--cor-primaria);
+  color: var(--cor-superficie);
   border: none;
   border-radius: 0.5rem;
   font-size: 1rem;
@@ -94,16 +84,16 @@ body {
 }
 
 .botao-primario:hover {
-  background-color: #00777d;
+  background-color: var(--cor-primaria-hover);
 }
 
 .link-cadastro {
   margin-top: 1.5rem;
-  border-top: 1px solid #dce3ec;
+  border-top: 1px solid var(--cor-borda);
   padding-top: 1.5rem;
 }
 .link-cadastro a {
-  color: #00777d;
+  color: var(--cor-primaria-hover);
   font-weight: bold;
   text-decoration: none;
 }
@@ -114,7 +104,7 @@ body {
 
 footer {
   font-size: 0.875rem;
-  color: #64748b;
+  color: var(--cor-texto-suave);
   text-align: center;
   margin-top: 3rem;
 }
@@ -126,7 +116,7 @@ body::after {
   width: 36rem;
   height: 26rem;
   border-radius: 50%;
-  background-color: #e3f3f4;
+  background-color: var(--cor-decoracao);
   z-index: -1;
   pointer-events: none;
 }

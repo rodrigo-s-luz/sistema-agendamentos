@@ -1,0 +1,20 @@
+:root {
+  --cor-fundo: #f4f7fa;
+  --cor-superficie: #ffffff;
+  --cor-texto: #10213a;
+  --cor-texto-suave: #64748b;
+  --cor-borda: #dce3ec;
+  --cor-primaria: #008f95;
+  --cor-primaria-hover: #00777d;
+  --cor-decoracao: #e3f3f4;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+  background-color: var(--cor-fundo);
+}
