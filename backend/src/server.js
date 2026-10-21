@@ -9,6 +9,8 @@ const servicos = [
   { id: 2, nome: "Atendimento Inicial", duracaoMinutos: 60 },
 ];
 
+app.use(express.json());
+
 app.use(express.static(path.join(__dirname, "../../frontend")));
 
 app.get("/servicos", (req, res) => {
@@ -16,5 +18,5 @@ app.get("/servicos", (req, res) => {
 });
 
 app.listen(port, () => {
-  console.log(`Servidor disponível em http://localhost${port}`);
+  console.log(`Servidor disponível em http://localhost:${port}`);
 });
