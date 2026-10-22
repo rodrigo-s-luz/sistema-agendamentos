@@ -1,5 +1,7 @@
 const express = require("express");
 const path = require("node:path");
+const rotasUsuarios = require("./routes/usuarios");
+require("./database/conexao");
 
 const app = express();
 const port = 3000;
@@ -10,6 +12,7 @@ const servicos = [
 ];
 
 app.use(express.json());
+app.use("/usuarios", rotasUsuarios);
 
 app.use(express.static(path.join(__dirname, "../../frontend")));
 

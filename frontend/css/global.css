@@ -10,6 +10,9 @@
   --cor-erro-fundo: #fef2f2;
   --cor-erro-texto: #991b1b;
   --cor-erro-borda: #fecaca;
+  --cor-sucesso-fundo: #f0fdf4;
+  --cor-sucesso-texto: #166534;
+  --cor-sucesso-borda: #bbf7d0;
 }
 
 * {

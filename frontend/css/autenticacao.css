@@ -150,3 +150,9 @@ body::after {
   border: none;
   background-color: transparent;
 }
+
+.mensagem-cadastro.sucesso {
+  background-color: var(--cor-sucesso-fundo);
+  color: var(--cor-sucesso-texto);
+  border-color: var(--cor-sucesso-borda);
+}
