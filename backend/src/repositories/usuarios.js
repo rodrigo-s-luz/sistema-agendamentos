@@ -24,4 +24,15 @@ function criarUsuario(dadosUsuario) {
   return Number(resultado.lastInsertRowid);
 }
 
-module.exports = { criarUsuario };
+function buscarUsuarioPorEmailOuCpf(email, cpf) {
+  const comando = banco.prepare(`
+    SELECT id
+    FROM usuarios
+    WHERE email = ? OR cpf = ?
+    LIMIT 1
+  `);
+
+  return comando.get(email, cpf);
+}
+
+module.exports = { criarUsuario, buscarUsuarioPorEmailOuCpf };

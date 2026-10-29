@@ -1,6 +1,10 @@
 const express = require("express");
 const { gerarHashSenha } = require("../utils/senha");
-const { criarUsuario } = require("../repositories/usuarios");
+const {
+  criarUsuario,
+  buscarUsuarioPorEmailOuCpf,
+} = require("../repositories/usuarios");
+const { validarCpf } = require("../utils/validar-cpf");
 
 const router = express.Router();
 
@@ -19,14 +23,41 @@ router.post("/", async (req, res) => {
     });
   }
 
+  const cpfNormalizado = cpf.replace(/\D/g, "");
+
+  if (!validarCpf(cpfNormalizado)) {
+    return res.status(400).json({
+      mensagem: "Informe um CPF válido.",
+    });
+  }
+
+  const emailNormalizado = email.trim().toLowerCase();
+
+  if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(emailNormalizado)) {
+    return res.status(400).json({
+      mensagem: "Informe um e-mail válido.",
+    });
+  }
+
   try {
+    const usuarioExistente = buscarUsuarioPorEmailOuCpf(
+      emailNormalizado,
+      cpfNormalizado,
+    );
+
+    if (usuarioExistente) {
+      return res.status(409).json({
+        mensagem: "Já existe uma conta com este e-mail ou CPF.",
+      });
+    }
+
     const senhaHash = await gerarHashSenha(senha);
 
     const id = criarUsuario({
       nome: nome.trim(),
       telefone: telefone.trim(),
-      cpf: cpf.trim(),
-      email: email.trim().toLowerCase(),
+      cpf: cpfNormalizado,
+      email: emailNormalizado,
       senhaHash,
     });
 

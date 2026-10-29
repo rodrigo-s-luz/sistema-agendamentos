@@ -1,6 +1,7 @@
 const formCadastro = document.querySelector("#form-cadastro");
 const mensagemCadastro = document.querySelector("#mensagem-cadastro");
 const campoConfirmarSenha = document.querySelector("#confirmar-senha");
+const campoCpf = document.querySelector("#cpf");
 
 formCadastro.addEventListener("submit", async (evento) => {
   evento.preventDefault();
@@ -54,4 +55,15 @@ formCadastro.addEventListener("submit", async (evento) => {
     mensagemCadastro.textContent =
       "Não foi possível concluir o cadastro. Verifique a conexão e tente novamente.";
   }
+});
+
+campoCpf.addEventListener("input", () => {
+  const numeros = campoCpf.value.replace(/\D/g, "").slice(0, 11);
+
+  const cpfFormatado = numeros
+    .replace(/^(\d{3})(\d)/, "$1.$2")
+    .replace(/^(\d{3})\.(\d{3})(\d)/, "$1.$2.$3")
+    .replace(/\.(\d{3})(\d)/, ".$1-$2");
+
+  campoCpf.value = cpfFormatado;
 });
